@@ -31,6 +31,14 @@ User.Init({
         type: DataTypes.STRING,
         allowNull: false,
     },
+    babyfirstname: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    babylastname: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
 
 },{
     sequelize,
