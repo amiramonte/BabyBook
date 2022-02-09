@@ -10,5 +10,22 @@
     "nodemon": "^2.0.15",
     "sequelize": "^6.16.1",
     "session": "^0.1.0"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "baby-forum-project-2",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kearac-hub/Baby-Forum-Project-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kearac-hub/Baby-Forum-Project-2/issues"
+  },
+  "homepage": "https://github.com/kearac-hub/Baby-Forum-Project-2#readme"
 }
