@@ -9,7 +9,8 @@
     "mysql2": "^2.3.3",
     "nodemailer": "^6.7.2",
     "nodemon": "^2.0.15",
-    "sequelize": "^6.16.1"
+    "sequelize": "^6.16.1",
+    "start": "^5.1.0"
   },
   "scripts": {
     "start": "node server.js"
