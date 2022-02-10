@@ -4,7 +4,7 @@ const sequelize = require('../config/config');
 
 class User extends Model {}
 
-User.Init({
+User.init({
 
     firstname: {
         type: DataTypes.STRING,
