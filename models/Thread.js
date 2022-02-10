@@ -3,7 +3,7 @@ const sequelize = require('../config/config');
 
 class Thread extends Model {}
 
-Thread.Init({
+Thread.init({
 
     title: {
         type: DataTypes.STRING,
