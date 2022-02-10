@@ -2,16 +2,28 @@
     <h1>Welcome to your Dashboard User!</h1>
     <section id="schedule">
         <h2>Upcoming Appointments</h2>
-        <section id="scheduledappointments">Appoints appear here</section>
-        <button id="appointment">Add Appointment</button>
+        <section id="exist-apt">Appoints appear here</section>
+        {{!-- open a modal to enter appointment info --}}
+        <button id="regApt">Add Appointment</button>
     </section>
     <br>
     <div>
         <section id="userbabies">
-            <button id="regbaby">Register Baby</button>
-            <p id="reggedbabies">Registered babies load here</p>
+            {{!-- open a modal to enter baby info --}}
+            <input id="bbname">
+            <button id="regBaby" data-toggle="modal" 
+            data-target="exampleModalCenter">Register Baby</button>
+            <p id="exist-baby">Registered babies load here</p>
         </section>
         <aside id="weatherboard">Upcoming weather</aside>
     </div>
-    <script src="../public/js/dash.js"></script>
+    {{!-- bootstrap script --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    {{!-- jquery script --}}
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    {{!-- our script --}}
+    <script src="/js/dash.js"></script>
 </div>
