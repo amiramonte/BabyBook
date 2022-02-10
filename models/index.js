@@ -10,6 +10,8 @@ User.hasMany(Comment);
 
 User.hasMany(Thread);
 
+Comment.belongsTo(Thread);
+
 Thread.hasMany(Comment);
 
 
