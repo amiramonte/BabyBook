@@ -1,0 +1,10 @@
+body{
+    background-image: linear-gradient(to right, #BBE7FE, #FFD4DB,#F9EAC2,#ECFDF1, #FFD898, #B5EECB);
+}
+
+.btn {
+    min-width: 250px;
+}
+#loginbtn{
+    background: -webkit-linear-gradient(right, #BBE7FE, #FFD4DB,#F9EAC2);
+}
