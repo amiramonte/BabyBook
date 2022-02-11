@@ -12,7 +12,7 @@ router.get('/sign-up', async (req, res) => {
     res.render('signup')
 })
 router.get('/forum', async (req, res) => {
-    res.render('./forum')
+    res.render('forum')
 })
 
 module.exports= router;

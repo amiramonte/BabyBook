@@ -15,14 +15,16 @@ body{
     display: block;
     margin: 10px;
 }
-#userbabies{
-    float: right;
+#baby-head{
+    padding: 20px;
+    float: left;
     border: black solid 2px;
-    width: 70%;
+    width: 20%;
     background-color: #84e6b5;
 }
-#weatherboard{
-    float: left;
+#weather-head{
+    padding: 20px;
+    float: right;
     border: black solid 2px;
     width: 20%;
     background-color: #FFD898;
