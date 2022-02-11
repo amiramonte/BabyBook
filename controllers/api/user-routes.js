@@ -12,24 +12,12 @@ router.get('/', async(req,res) => {
         const userData = await User.findAll({
             include: [Thread, Comment]
         })
-        return res.status(200).json(userData);
+         res.status(200).json(userData);
     } catch (error) {
-        return res.status(400).json(error);
+         res.status(400).json(error);
     }
 });
 
-
-// GET route for single user
-router.get('/:id', async (req, res) => {
-    try {
-      const singleUser = await User.findByPk(req.params.id, {
-        include: [Thread, Comment]
-      })
-      return res.status(200).json(singleUser)
-    } catch (error) {
-        return res.status(400).json(error)
-    }
-  });
 
 
 // POST route for create new user
@@ -43,7 +31,7 @@ router.post('/sign-up', async(req, res) => {
             password: req.body.password
         })
 
-        return res.status(200).json(newUser);
+         res.status(200).json(newUser);
     
     } catch (error) {
         res.status(400).json(error);
@@ -63,13 +51,13 @@ router.post('/sign-in', async(req, res) => {
         })
 
         if (!currentUser) {
-            return res.status(400).json({message: "Invalid Email/Password. Please check and try again."})
+             res.status(400).json({message: "Invalid Email/Password. Please check and try again."})
         }
 
         const validPassword = await bcrypt.compare(req.body.password, currentUser.password);
 
         if (!validPassword) {
-            return res.status(400).json({message: "Invalid Email/Password. Please check and try again."})
+             res.status(400).json({message: "Invalid Email/Password. Please check and try again."})
         }
 
         req.session.user = {
@@ -78,32 +66,46 @@ router.post('/sign-in', async(req, res) => {
             email: currentUser.email
         }
 
-        return res.status(200).json(currentUser);
+         res.status(200).json(currentUser);
 
     } catch (error) {
-        return res.status(400).json(error)
+         res.status(400).json(error)
     }
 })
 
 
 // SIGN OUT route for user
-router.get('/sign-out', async(req,res) => {
-    req.session.destroy();
-    res.json({msg: 'You have successfully signed out!'})
+router.get('/signout', (req,res) => {
+    try {
+        req.session.destroy();
+        res.json({msg: 'You have successfully signed out!'})    
+    } catch (error) {
+        res.status(400).json(error);
+    }
 })
 
 
 
 
 
-router.get('/showsessions', async(req,res) => {
+router.get('/showsessions', (req,res) => {
     res.json(req.session);
 })
 
 
 
 
-
+// GET route for single user
+router.get('/:id', async (req, res) => {
+    try {
+      const singleUser = await User.findByPk(req.params.id, {
+        include: [Thread, Comment]
+      })
+       res.status(200).json(singleUser)
+    } catch (error) {
+         res.status(400).json(error)
+    }
+  });
 
 
 
