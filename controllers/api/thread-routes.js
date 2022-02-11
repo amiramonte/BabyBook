@@ -19,17 +19,6 @@ router.get('/', async(req,res) => {
 
 
 
-// GET route for single thread
-router.get('/:id', async (req, res) => {
-    try {
-      const singleThread = await Thread.findByPk(req.params.id, {
-        include: [User, Comment]
-      })
-      return res.status(200).json(singleThread)
-    } catch (error) {
-        return res.status(400).json(error)
-    }
-  });
 
 
 
@@ -118,5 +107,23 @@ router.delete('/:id', async(req, res) => {
         return res.status(400).json(error)
     }
 })
+
+
+
+// GET route for single thread
+router.get('/:id', async (req, res) => {
+    try {
+      const singleThread = await Thread.findByPk(req.params.id, {
+        include: [User, Comment]
+      })
+      return res.status(200).json(singleThread)
+    } catch (error) {
+        return res.status(400).json(error)
+    }
+  });
+
+
+
+
 
 module.exports = router;
