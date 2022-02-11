@@ -19,6 +19,18 @@ router.get('/', async(req,res) => {
 });
 
 
+// GET route for single user
+router.get('/:id', async (req, res) => {
+    try {
+      const singleUser = await User.findByPk(req.params.id, {
+        include: [Thread, Comment]
+      })
+      return res.status(200).json(singleUser)
+    } catch (error) {
+        return res.status(400).json(error)
+    }
+  });
+
 
 // POST route for create new user
 router.post('/sign-up', async(req, res) => {

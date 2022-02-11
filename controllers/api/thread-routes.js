@@ -29,7 +29,6 @@ router.get('/:id', async (req, res) => {
     } catch (error) {
         return res.status(400).json(error)
     }
-  
   });
 
 
@@ -65,7 +64,7 @@ router.put('/:id', async(req, res) => {
             return res.status(400).json({msg: 'Please log in first'});
         }
 
-        const foundThread = await Thread.findOne(req.params.id)
+        const foundThread = await Thread.findByPk(req.params.id)
 
         if (!foundThread) {
             return res.status(400).json({msg: 'Not able to find this thread!'})
@@ -89,5 +88,35 @@ router.put('/:id', async(req, res) => {
 })
 
 
+
+// DELETE route for thread
+router.delete('/:id', async(req, res) => {
+    try {
+        if (!req.session.user) {
+            return res.status(400).json({msg: 'Please log in first'});
+        }
+
+        const foundThread = await Thread.findByPk(req.params.id);
+
+        if (!foundThread) {
+            return res.status(400).json({msg: 'Not able to find this thread!'});
+        }
+
+        if (foundThread.UserId !== req.session.user.id) {
+            return res.status(400).json({msg: 'You are not able to delete this thread'})
+        }
+
+        const deleteThread = await Thread.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+
+        return res.status(200).json(deleteThread);
+
+    } catch (error) {
+        return res.status(400).json(error)
+    }
+})
 
 module.exports = router;
