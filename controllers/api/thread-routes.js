@@ -60,19 +60,22 @@ router.put('/:id', async(req, res) => {
         }
 
 
-        if (foundThread.userId !== req.session.user.id) {
+        if (foundThread.UserId !== req.session.user.id) {
             return res.status(400).json({msg: 'You are not able to edit this thread'})
         }
 
         const updateThread = await Thread.update(req.body, {
-            where: req.params.id
+            where: {
+                id:req.params.id
+            }
         })
 
         return res.status(200).json(updateThread);
 
 
     } catch (error) {
-        return res.status(200).json(error)
+        console.log(error)
+        return res.status(400).json(error)
     }
 })
 
