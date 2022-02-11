@@ -11,5 +11,8 @@ router.get('/sign-in', async (req, res) => {
 router.get('/sign-up', async (req, res) => {
     res.render('signup')
 })
+router.get('/forum', async (req, res) => {
+    res.render('./forum')
+})
 
 module.exports = router

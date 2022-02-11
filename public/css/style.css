@@ -8,3 +8,25 @@ body{
 #loginbtn, #signupbtn{
     background: -webkit-linear-gradient(right, #BBE7FE, #FFD4DB,#F9EAC2);
 }
+<<<<<<< HEAD
+=======
+.center {
+    text-align: center;
+}
+#weatherandbabies{
+    display: block;
+    margin: 10px;
+}
+#userbabies{
+    float: right;
+    border: black solid 2px;
+    width: 70%;
+    background-color: #84e6b5;
+}
+#weatherboard{
+    float: left;
+    border: black solid 2px;
+    width: 20%;
+    background-color: #FFD898;
+}
+>>>>>>> 16578bd8702e6b105933e3a5c5817a12c1c1cef1
