@@ -4,7 +4,7 @@ router.get('/', async (req, res) => {
     res.render('/dash')
 })
 
-router.get('/sign-in', async (req, res) => {
+router.get('/', async (req, res) => {
     res.render('signin')
 })
 
