@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 router.get('/', async (req, res) => {
-    res.render('/dash')
+    res.render('dash')
 })
 
 router.get('/sign-in', async (req, res) => {
@@ -15,4 +15,4 @@ router.get('/forum', async (req, res) => {
     res.render('./forum')
 })
 
-module.exports = router
+module.exports= router;
