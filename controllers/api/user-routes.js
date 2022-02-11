@@ -75,7 +75,7 @@ router.post('/sign-in', async(req, res) => {
 
 
 // SIGN OUT route for user
-router.get('/signout', (req,res) => {
+router.get('/sign-out', (req,res) => {
     try {
         req.session.destroy();
         res.json({msg: 'You have successfully signed out!'})    
