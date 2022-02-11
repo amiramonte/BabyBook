@@ -17,17 +17,6 @@ router.get('/', async(req,res) => {
 });
 
 
-// GET route for single comment
-router.get('/:id', async (req, res) => {
-    try {
-      const singleComment = await Comment.findByPk(req.params.id, {
-        include: [User, Thread]
-      })
-      return res.status(200).json(singleComment)
-    } catch (error) {
-        return res.status(400).json(error)
-    }
-  });
 
 
 
@@ -48,6 +37,22 @@ router.post('/', async(req,res) => {
     }
 
 })
+
+
+
+
+// GET route for single comment
+router.get('/:id', async (req, res) => {
+    try {
+      const singleComment = await Comment.findByPk(req.params.id, {
+        include: [User, Thread]
+      })
+      return res.status(200).json(singleComment)
+    } catch (error) {
+        return res.status(400).json(error)
+    }
+  });
+
 
 
 

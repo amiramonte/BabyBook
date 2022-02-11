@@ -5,7 +5,7 @@ body{
 .btn {
     min-width: 250px;
 }
-#loginbtn{
+#loginbtn, #signupbtn{
     background: -webkit-linear-gradient(right, #BBE7FE, #FFD4DB,#F9EAC2);
 }
 .center {
