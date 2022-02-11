@@ -1,24 +1,30 @@
 <div>
     <h1 class="center">Welcome to your Dashboard User!</h1>
-    <section class="center" id="schedule">
-        <h2>Upcoming Appointments</h2>
-        <section id="exist-apt">Appoints appear here</section>
-        {{!-- open a modal to enter appointment info --}}
-        <button id="regApt">Add Appointment</button>
-    </section>
     <br>
-    <div>
-        <section id="userbabies">
+        <section id="baby-head">
             {{!-- open a modal to enter baby info --}}
-            <input id="bbname">
+            <h3>My Family</h3>
+            <input id="name">
             <button id="regBaby" data-toggle="modal" 
             data-target="exampleModalCenter">Register Baby</button>
-            <p id="exist-baby">Registered babies load here</p>
+                <div class="baby-body">
+                    <p id="alert"></p>
+                    <p id="exist-baby"></p>
+                </div>
         </section>
-        <aside id="weatherboard">Upcoming weather</aside>
-    </div>
-    {{!-- bootstrap script --}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <aside id="weather-head">
+            <h3>Upcoming Weather</h3>
+            <div class="weather-body">
+                <div class="appt">
+                    <section class="center" id="schedule">
+                        <h2>Upcoming Appointments</h2>
+                        <section id="exist-apt">Appoints appear here</section>
+                        {{!-- open a modal to enter appointment info --}}
+                        <button id="regApt">Add Appointment</button>
+                    </section>
+
+                </div>
+        </aside>
     {{!-- jquery script --}}
     <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
