@@ -1,20 +1,22 @@
 <div class="text-center mt-5">
-    <form class="shadow p-3 mb-5 bg-white rounded" id="signupFrom" style="max-width:400px;margin:auto;">
+    <form class="shadow p-3 mb-5 bg-white rounded" id="signupForm" style="max-width:400px;margin:auto;">
         <img class="mt-4 mb-4"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnQcMUsO-XRXPjSb8NWuGrhw0tXGVkvGrsGw&usqp=CAU"
             height="72" alt="stork with baby">
         <h1 class='h3 mb-3 font-weight-normal'>Create Account</h1>
-
-        <input type="text"id='firstName' class="form-control mb-2" placeholder="First Name">
-        <input type="text" id="lastName" class="form-control mb-2" placeholder="Last Name">
-        <input type="text" id="username" class="form-control mb-2" placeholder="Username">
-        <input type="email" id="emailAddress" class="form-control mb-2" placeholder="Email Address">
-        <input type="password" id="password" placeholder="Password" class="form-control">
+        <div for="firstname-input"><input type="text" id='firstName' class="form-control mb-2" placeholder="First Name">
+        </div>
+        <div for="lastname-input"><input type="text" id="lastName" class="form-control mb-2" placeholder="Last Name">
+        </div>
+<div for="un-signup"><input type="text" id="username" class="form-control mb-2" placeholder="Username"></div>
+  <div for="email-signup"><input type="email" id="emailAddress" class="form-control mb-2" placeholder="Email Address"></div>      
+     <div for="pw-signup"><input type="password" id="password" placeholder="Password" class="form-control"></div>   
+        
 
         <div class="mt-3">
-            <button class="btn btn-lg btn-block" id="signupbtn">Sign up!</button>
+            <button type="submit" class="btn btn-lg btn-block" id="signupbtn">Sign up!</button>
         </div>
 
     </form>
 </div>
-<script src="/public/js/signup.js"></script>
+<script src="/js/signup.js"></script>
