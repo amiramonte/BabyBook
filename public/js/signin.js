@@ -1,25 +1,32 @@
-// const loginFormHandler = async function(event) {
-//     event.preventDefault();
-  
-//     const usernameEl = document.querySelector('#username-input-login');
-//     const passwordEl = document.querySelector('#password-input-login');
-  
-//     const response = await fetch('//user/sign-in', {
-//       method: 'POST',
-//       body: JSON.stringify({
-//         username: usernameEl.value,
-//         password: passwordEl.value,
-//       }),
-//       headers: { 'Content-Type': 'application/json' },
-//     });
-  
-//     if (response.ok) {
-//       document.location.replace('/dash');
-//     } else {
-//       alert('Failed to login');
-//     }
-//   };
-  
-  // document
-  //   .querySelector('#login-form')
-  //   .addEventListener('submit', loginFormHandler);
+console.log("I AM SIGN IN");
+
+const signinForm = document.querySelector('#signinForm');
+
+const signinHandler = async function(event) {
+  event.preventDefault();
+
+  const signinObj = {
+    email: document.querySelector('#emailAddress').value,
+    password: document.querySelector('#password').value
+  }
+
+  console.log(signinObj);
+
+  const response = await fetch('/api/user/sign-in', {
+    method: 'POST',
+    body: JSON.stringify(signinObj),
+    headers: {
+       'Content-Type': 'application/json' 
+      },
+  });
+
+  if (response.ok) {
+    document.location.replace('/dashboard');
+  } else {
+    alert('Incorrect email or password. Please try again.');
+  }
+
+}
+
+
+signinForm.addEventListener("submit", signinHandler);

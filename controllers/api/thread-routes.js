@@ -35,7 +35,6 @@ router.post('/', async(req,res) => {
             UserId:req.session.user.id 
         })
 
-
         return res.status(200).json(newThread);
     
     } catch (error) {
