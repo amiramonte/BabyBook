@@ -1,37 +1,23 @@
-const express = require('express');
-const bcrypt = require('bcrypt');
 const router = require('express').Router();
-const { User, Thread, Comment } = require('../../models');
+const { User } = require('../../models');
 
 
 // The `/api/user` endpoint
-
-// GET route for all users
-router.get('/', async (req, res) => {
-    try {
-        const userData = await User.findAll({
-            include: [Thread, Comment]
-        })
-        res.status(200).json(userData);
-    } catch (error) {
-        res.status(400).json(error);
-    }
-});
-
 
 
 // POST route for create new user
 router.post('/sign-up', async (req, res) => {
     try {
-        const newUser = await User.create({
-            firstname: req.body.firstname,
-            lastname: req.body.lastname,
-            username: req.body.username,
-            email: req.body.email,
-            password: req.body.password
+        const newUser = await User.create(req.body)
+
+        req.session.save(() => {
+            req.session.userId = newUser.id;
+            req.session.username = newUser.username;
+            req.session.loggedIn = true;
+
+            res.status(200).json(newUser);
         })
 
-        res.status(200).json(newUser);
 
     } catch (error) {
         res.status(400).json(error);
@@ -52,21 +38,25 @@ router.post('/sign-in', async (req, res) => {
 
         if (!currentUser) {
             res.status(400).json({ message: "Invalid Email/Password. Please check and try again." })
+            return
         }
 
-        const validPassword = await bcrypt.compare(req.body.password, currentUser.password);
+        const validPassword = currentUser.checkPassword(req.body.password)
 
         if (!validPassword) {
             res.status(400).json({ message: "Invalid Email/Password. Please check and try again." })
+            return
         }
 
-        req.session.user = {
-            id: currentUser.id,
-            username: currentUser.username,
-            email: currentUser.email
-        }
+        req.session.save(() => {
+            req.session.userId = currentUser.id;
+            req.session.username = currentUser.username;
+            req.session.loggedIn = true;
 
-        res.status(200).json(currentUser);
+            res.status(200).json({ currentUser, message: "you are now logged in!" });
+        })
+
+
 
     } catch (error) {
         res.status(400).json(error)
@@ -85,61 +75,5 @@ router.get('/sign-out', (req, res) => {
 })
 
 
-// show sessions
-router.get('/showsessions', (req, res) => {
-    res.json(req.session);
-})
 
-
-// GET route for user who forgot password
-router.get('/forgot-password', function (req, res, next) {
-    res.render('user/forgot-password', {});
-});
-// post route 
-router.post('/forgot-password', async function (req, res, next) {
-    var email = await User.findOne({ where: { email: req.body.email } });
-    if (email == null) {
-        return res.json({ status: 'check email' });
-    }
-    await ResetToken.update({
-        used: 1
-    },
-        {
-            where: {
-                email: req.body.email
-            }
-        })
-    
-
-    //create email
-  const message = {
-    from: process.env.SENDER_ADDRESS,
-    to: req.body.email,
-    replyTo: process.env.REPLYTO_ADDRESS,
-    subject: process.env.FORGOT_PASS_SUBJECT_LINE,
-    text: 'To reset your password, please click the link below.\n\nhttps://'+process.env.DOMAIN+'/user/reset-password?token='+encodeURIComponent(token)+'&email='+req.body.email
-};
-
-//send email
-transport.sendMail(message, function (err, info) {
-   if(err) { console.log(err)}
-   else { console.log(info); }
-});
-});
-
-    // GET route for single user
-    router.get('/:id', async (req, res) => {
-        try {
-            const singleUser = await User.findByPk(req.params.id, {
-                include: [Thread, Comment]
-            })
-            res.status(200).json(singleUser)
-        } catch (error) {
-            res.status(400).json(error)
-        }
-    });
-
-
-
-
-    module.exports = router;
+module.exports = router;

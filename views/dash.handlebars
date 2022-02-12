@@ -4,9 +4,15 @@
         <section id="baby-head">
             {{!-- open a modal to enter baby info --}}
             <h3>My Family</h3>
-            <input id="name">
+            <form id="babyForm">
+            <label for="firstName">baby's first name</label>
+            <input id="firstName">
+            <label for="lastName">baby's Last name</label>
+            <input id="lastName">
             <button id="regBaby" data-toggle="modal" 
-            data-target="exampleModalCenter">Register Baby</button>
+            data-target="exampleModalCenter">Register Baby</button> 
+            </form>
+            
                 <div class="baby-body">
                     <p id="alert"></p>
                     <p id="exist-baby"></p>

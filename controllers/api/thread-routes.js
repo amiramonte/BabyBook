@@ -1,38 +1,23 @@
 const router = require('express').Router();
 const {Thread, Comment, User} = require('../../models');
+const withAuth =  require('../../utils/auth')
 
 
 // The `/api/thread` endpoint
 
 
-// GET route for all threads
-router.get('/', async(req,res) => {
-    try {
-        const threadData = await Thread.findAll({
-            include: [User, Comment]
-        })
-        return res.status(200).json(threadData);
-    } catch (error) {
-        return res.status(400).json(error);
-    }
-});
-
-
-
-
 
 
 // POST route for new thread
-router.post('/', async(req,res) => {
+router.post('/', withAuth,  async(req,res) => {
     try {
         if (!req.session.user) {
             return res.status(400).json({msg: 'Please log in first'})
         }
         
         const newThread = await Thread.create({
-            title:req.body.title,
-            content:req.body.content,
-            UserId:req.session.user.id 
+         ...req.body,
+            userId:req.session.userId 
         })
 
         return res.status(200).json(newThread);
@@ -46,26 +31,13 @@ router.post('/', async(req,res) => {
 
 
 // PUT route to update thread
-router.put('/:id', async(req, res) => {
+router.put('/:id', withAuth, async(req, res) => {
     try {
-        if (!req.session.user) {
-            return res.status(400).json({msg: 'Please log in first'});
-        }
-
-        const foundThread = await Thread.findByPk(req.params.id)
-
-        if (!foundThread) {
-            return res.status(400).json({msg: 'Not able to find this thread!'})
-        }
-
-
-        if (foundThread.UserId !== req.session.user.id) {
-            return res.status(400).json({msg: 'You are not able to edit this thread'})
-        }
+       
 
         const updateThread = await Thread.update(req.body, {
             where: {
-                id:req.params.id
+                id: req.params.id
             }
         })
 
@@ -81,21 +53,8 @@ router.put('/:id', async(req, res) => {
 
 
 // DELETE route for thread
-router.delete('/:id', async(req, res) => {
+router.delete('/:id', withAuth,  async(req, res) => {
     try {
-        if (!req.session.user) {
-            return res.status(400).json({msg: 'Please log in first'});
-        }
-
-        const foundThread = await Thread.findByPk(req.params.id);
-
-        if (!foundThread) {
-            return res.status(400).json({msg: 'Not able to find this thread!'});
-        }
-
-        if (foundThread.UserId !== req.session.user.id) {
-            return res.status(400).json({msg: 'You are not able to delete this thread'})
-        }
 
         const deleteThread = await Thread.destroy({
             where: {
@@ -111,18 +70,6 @@ router.delete('/:id', async(req, res) => {
 })
 
 
-
-// GET route for single thread
-router.get('/:id', async (req, res) => {
-    try {
-      const singleThread = await Thread.findByPk(req.params.id, {
-        include: [User, Comment]
-      })
-      return res.status(200).json(singleThread)
-    } catch (error) {
-        return res.status(400).json(error)
-    }
-  });
 
 
 
