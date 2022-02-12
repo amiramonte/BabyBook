@@ -1,32 +1,35 @@
-// const signupFormHandler = async function(event) {
-//     event.preventDefault();
-  
-//     const firstNameEl = document.querySelector('#firstname-input');
-//     const lastNameEl = document.querySelector('#lasttname-input');
-//     const usernameEl = document.querySelector('#un-signup');
-//     const emailEl = document.querySelector('#email-signup');
-//     const passwordEl = document.querySelector('#email-signup');
-  
-//     const response = await fetch('/user', {
-//       method: 'POST',
-//       body: JSON.stringify({
-//         firstName: firstNameEl.value,
-//         lastName: lastNameEl.value,
-//         username: usernameEl.value,
-//         email: emailEl.value,
-//         password: passwordEl.value,
-//       }),
-//       headers: { 'Content-Type': 'application/json' },
-//     });
-  
-//     if (response.ok) {
-//       document.location.replace('/dash');
-//     } else {
-//       alert('Failed to sign up');
-//     }
-//   };
-  
-//   document
-//     .querySelector('#signupForm')
-//     .addEventListener('submit', signupFormHandler);
-  
+console.log("I AM SIGN UP");
+
+const signupForm = document.querySelector('#signupForm');
+
+const signupHandler = async function(event) {
+  event.preventDefault();
+
+  const signupObj = {
+    firstname: document.querySelector('#firstName').value,
+    lastname: document.querySelector('#lastName').value,
+    username: document.querySelector('#username').value,
+    email: document.querySelector('#emailAddress').value,
+    password: document.querySelector('#password').value
+  }
+
+  console.log(signupObj);
+
+  const response = await fetch('/api/user/sign-up', {
+    method: 'POST',
+    body: JSON.stringify(signupObj),
+    headers: {
+       'Content-Type': 'application/json' 
+      },
+  });
+
+  if (response.ok) {
+    document.location.replace('/dashboard');
+  } else {
+    alert('Something is missing. Please provide all requested information.');
+  }
+
+}
+
+
+signupForm.addEventListener("submit", signupHandler);
