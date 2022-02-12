@@ -21,10 +21,11 @@
 
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         {{!-- when user is not logged in this will display as login --}}
+       
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Username
-          </a>{{#if loggedin}}
+          </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">My Account</a></li>
             <li><a class="dropdown-item" href="#">Settings</a></li>
@@ -42,7 +43,7 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Dashboard</a>
-        </li>
+        </li> 
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/forum">Forum</a>
         </li>
