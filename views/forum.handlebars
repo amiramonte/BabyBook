@@ -1,3 +1,21 @@
 <h1 class="center">Welcome To the Forums</h1>
 <p class="center">Discuss a wide range of topics with your fellow parents. Please remember to respect and love one another. </p>
 <p class="center"><i class="fas fa-baby fa-spin" style="font-size:30px"></i></p>
+
+<form id="forumPost">
+    <label for="postTitle">Title:</label>
+    <input type="text" name="postTitle" id="postTitle" />
+
+    <label for="postContent">Content:</label>
+    <textarea name="postContent" id="postContent" ></textarea>
+
+    <button type="submit">Add Post</button>
+</form>
+{{!-- create a toggle or way to have this show up--}}
+{{#each threads}}
+
+{{threads.title}}
+
+{{/each}}
+
+<script src="/js/forum.js"></script>

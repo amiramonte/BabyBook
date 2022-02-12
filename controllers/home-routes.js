@@ -1,8 +1,9 @@
 const { User, Thread, Comment } = require('../models');
+const withAuth = require('../utils/auth')
 
 const router = require('express').Router();
 
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
     res.render('dash')
 })
 
@@ -31,11 +32,11 @@ router.get('/forum', async (req, res) => {
         console.log('====================');
     
     
-        res.render('forum', {allThreads:threads})
+        res.render('forum', {threads})
     
     } catch (error) {
         res.status(400).json(error)
     }
 })
 
-module.exports = router
+module.exports= router;
