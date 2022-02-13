@@ -2,7 +2,7 @@
 <p class="center">Discuss a wide range of topics with your fellow parents. Please remember to respect and love one another. </p>
 <p class="center"><i class="fas fa-baby fa-spin" style="font-size:30px"></i></p>
 
-<form id="forumPost">
+<form class="mb-4" id="forumPost">
     <label for="postTitle">Title:</label>
     <input type="text" name="postTitle" id="postTitle" />
 
@@ -11,11 +11,26 @@
 
     <button type="submit">Add Post</button>
 </form>
-{{!-- create a toggle or way to have this show up--}}
+
 {{#each threads}}
-
-{{threads.title}}
-
+<div class="card mb-4 w-75">
+  <div class="card-header bg-info text-white">
+    <h1>{{title}}</h1>
+    <div>
+        Thread Created by {{User.username}}
+    </div>
+  </div>
+  <div class="card-body">
+    <h3 class="card-title">{{content}}</h3>
+    <h5>{{User.username}} says:</h5>
+    {{#each Comments}}
+    <p class="card-text">{{body}}</p>
+    {{/each}}
+    <a href="#" class="btn btn-success">Add Comment</a>
+  </div>
+</div>
 {{/each}}
+
+
 
 <script src="/js/forum.js"></script>
