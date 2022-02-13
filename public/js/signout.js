@@ -4,7 +4,7 @@ const signoutButton = document.querySelector('#signoutButton');
 
 const signOut = async function() {
     const response = await fetch('/api/user/sign-out', {
-      method: 'GET',
+      method: 'POST',
       headers: { 'Content-Type': 'application/json' },
     });
   
@@ -15,4 +15,4 @@ const signOut = async function() {
     }
   };
   
-signoutButton.addEventListener("submit", signOut);
+signoutButton.addEventListener("click", signOut);

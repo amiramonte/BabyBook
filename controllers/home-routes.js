@@ -14,23 +14,20 @@ router.get('/', async (req, res) => {
 router.get('/sign-up', async (req, res) => {
     res.render('signup')
 })
+
+
 router.get('/forum', async (req, res) => {
 
     try {
         const threadData = await Thread.findAll({
-            include: [Comment]
+            include: [User, Comment]
         });
 
-        console.log('====================');
-        console.log(threadData);
-        console.log('====================');
-    
         const threads = threadData.map((thread) => thread.get({plain:true}));
-    
-        console.log('====================');
+
+        console.log('==================');
         console.log(threads);
-        console.log('====================');
-    
+        console.log('==================');
     
         res.render('forum', {threads})
     
