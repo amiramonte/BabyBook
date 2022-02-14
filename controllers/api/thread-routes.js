@@ -9,10 +9,6 @@ const withAuth =  require('../../utils/auth')
 // POST route for new thread
 router.post('/', withAuth,  async(req,res) => {
     try {
-        if (!req.session.user) {
-            return res.status(400).json({msg: 'Please log in first'})
-        }
-        
         const newThread = await Thread.create({
          ...req.body,
             userId:req.session.userId 
