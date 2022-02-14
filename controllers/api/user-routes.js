@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Family } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 
 // The `/api/user` endpoint
@@ -73,6 +74,43 @@ router.post('/sign-out', (req, res) => {
         res.status(400).json(error);
     }
 })
+
+
+
+// PUT route to remove user from Family Group
+router.put('/removeuser/:id', withAuth, async(req, res) => {
+    try {
+        const updatedUser = await User.update({ FamilyId:null },{
+            where: {
+                id:req.params.id
+            }
+        })
+
+        res.status(200).json(updatedUser)
+
+    } catch (error) {
+        res.status(400).json(error);
+    }
+} )
+
+
+// TEMPORARY GET ROUTE for all users to test FamilyId key reset
+router.get('/', async(req, res)=> {
+    try {
+        const allUsers = await User.findAll({
+            include: [Family]
+        });
+
+        res.status(200).json(allUsers);
+
+    } catch (error) {
+        res.status(400).json(error);
+    }
+
+
+})
+
+
 
 
 router.get('/showsessions', (req, res) => {

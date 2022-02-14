@@ -1,5 +1,5 @@
 const sequelize = require('../config/config.js');
-const {User, Thread, Comment} = require('../models');
+const {User, Thread, Comment, Family} = require('../models');
 
 
 const users = [
@@ -8,28 +8,32 @@ const users = [
         lastname: "Miramontes",
         username: "amiramonte",
         email: "alex.r.miramontes@gmail.com",
-        password: "password"
+        password: "password",
+        FamilyId: 1
     },
     {
         firstname: "Keara",
         lastname: "Cotter",
         username: "kearac-hub",
         email: "kearacotter@gmail.com",
-        password: "password1"
+        password: "password1",
+        FamilyId: 1
     },
     {
         firstname: "Lorena",
         lastname: "Zuniga",
         username: "lzvalentin",
         email: "lzuniga1315@gmail.com",
-        password: "password2"
+        password: "password2",
+        FamilyId: 1
     },
     {
         firstname: "Ben",
         lastname: "Dominguez",
         username: "zortro",
         email: "ben.r.dominguez@gmail.com",
-        password: "password3"
+        password: "password3",
+        FamilyId: 1
     },
 
 ]
@@ -87,8 +91,18 @@ const comments = [
 ]
 
 
+const families = [
+    {
+        groupname: "Project 2",
+    },
+]
+
+
+
+
 const seed = async () => {
     await sequelize.sync({force:true});
+    await Family.bulkCreate(families);
     await User.bulkCreate(users, {individualHooks:true});
     await Thread.bulkCreate(threads);
     await Comment.bulkCreate(comments);

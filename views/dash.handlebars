@@ -1,36 +1,56 @@
 <div>
-    <h1 class="center">Welcome to your Dashboard User!</h1>
+    <h1 class="center">Welcome to your Dashboard!</h1>
     <br>
-        <section id="baby-head">
-            {{!-- open a modal to enter baby info --}}
-            <h3>My Family</h3>
-            <form id="babyForm">
-            <label for="firstName">baby's first name</label>
-            <input id="firstName">
-            <label for="lastName">baby's Last name</label>
-            <input id="lastName">
-            <button id="regBaby" data-toggle="modal" 
-            data-target="exampleModalCenter">Register Baby</button> 
-            </form>
-            
-                <div class="baby-body">
-                    <p id="alert"></p>
-                    <p id="exist-baby"></p>
-                </div>
-        </section>
-        <aside id="weather-head">
-            <h3>Upcoming Weather</h3>
-            <div class="weather-body">
-                <div class="appt">
-                    <section class="center" id="schedule">
-                        <h2>Upcoming Appointments</h2>
-                        <section id="exist-apt">Appoints appear here</section>
-                        {{!-- open a modal to enter appointment info --}}
-                        <button id="regApt">Add Appointment</button>
-                    </section>
+    <div class="container">
+        <div class="row">
+            <section class="col" id="baby-head">
+                {{!-- open a modal to enter baby info --}}
+                <h3>My Family</h3>
+                <form id="babyForm">
+                <label for="firstName">baby's first name</label>
+                <input id="firstName">
+                <label for="lastName">baby's Last name</label>
+                <input id="lastName">
+                <button id="regBaby" data-toggle="modal" 
+                data-target="exampleModalCenter">Register Baby</button> 
+                </form>
+                
+                    <div class="baby-body">
+                        <p id="alert"></p>
+                        <p id="exist-baby"></p>
+                    </div>
+            </section>
 
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>My Family Members:</h3>
+                    </div>
+                    {{#each myFamily}}
+                    <div class="card-body d-flex justify-content-between">
+                        <h5>{{username}}</h5>
+                        
+                        <button type="button" class="btn btn-outline-danger btn-sm">Remove Family Member</button>
+                    </div>
+                    {{/each}}
                 </div>
-        </aside>
+            </div>
+
+            <aside class="col" id="weather-head">
+                <h3>Upcoming Weather</h3>
+                <div class="weather-body">
+                    <div class="appt">
+                        <section class="center" id="schedule">
+                            <h2>Upcoming Appointments</h2>
+                            <section id="exist-apt">Appoints appear here</section>
+                            {{!-- open a modal to enter appointment info --}}
+                            <button id="regApt">Add Appointment</button>
+                        </section>
+
+                    </div>
+            </aside>
+        </div>
+    </div>    
     {{!-- jquery script --}}
     <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -38,4 +58,5 @@
     crossorigin="anonymous"></script>
     {{!-- our script --}}
     <script src="/js/dash.js"></script>
+    <script src="/js/familyondash.js"></script>
 </div>
