@@ -6,8 +6,6 @@ const withAuth =  require('../../utils/auth')
 // The `/api/thread` endpoint
 
 
-
-
 // POST route for new thread
 router.post('/', withAuth,  async(req,res) => {
     try {
@@ -33,7 +31,6 @@ router.post('/', withAuth,  async(req,res) => {
 // PUT route to update thread
 router.put('/:id', withAuth, async(req, res) => {
     try {
-       
 
         const updateThread = await Thread.update(req.body, {
             where: {
@@ -68,9 +65,6 @@ router.delete('/:id', withAuth,  async(req, res) => {
         return res.status(400).json(error)
     }
 })
-
-
-
 
 
 

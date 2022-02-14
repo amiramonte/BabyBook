@@ -1,9 +1,9 @@
 const User = require('./User');
 const Thread = require('./Thread');
 const Comment = require('./Comment');
-const Baby =  require('./Baby')
+const Baby =  require('./Baby');
+const Family = require('./Family');
 
-//where are your foreign keys? also what happens if I delete data that is associated???
 Thread.belongsTo(User);
 
 Comment.belongsTo(User);
@@ -15,9 +15,12 @@ Baby.belongsTo(User, {
 
 Thread.hasMany(Comment);
 
+User.belongsTo(Family);
+Family.hasMany(User);
 
 module.exports = {
     User,
     Thread,
-    Comment
+    Comment,
+    Family
 };

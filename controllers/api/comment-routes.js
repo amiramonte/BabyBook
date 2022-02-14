@@ -5,17 +5,9 @@ const withAuth =  require('../../utils/auth')
 // The `/api/comment` endpoint
 
 
-
-
-
-
-
 // POST route for new comment
 router.post('/', withAuth, async(req,res) => {
     try {
-
-       
-
         const newComment = await Comment.create({
             body:req.body.body,
             UserId:req.session.user.id
@@ -67,11 +59,6 @@ router.delete('/:id', withAuth, async(req, res) => {
         return res.status(400).json(error)
     }
 })
-
-
-
-
-
 
 
 module.exports = router;

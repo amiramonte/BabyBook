@@ -18,5 +18,4 @@ Thread.init({
     sequelize,
 });
 
-module.exports = Thread 
-
+module.exports = Thread
