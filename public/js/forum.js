@@ -3,7 +3,10 @@ const newPostHandler =  async function(event){
 
     const title =  document.getElementById('postTitle').value;
     const content = document.getElementById('postContent').value;
-console.log(title)
+
+console.log(title);
+console.log(content);
+
     const response = await fetch('/api/thread/', {
         method: 'POST',
         body: JSON.stringify({
@@ -13,6 +16,9 @@ console.log(title)
         headers: {  'Content-Type': 'application/json' }
     });
 
+
+    console.log(response);
+
     if (response.ok) {
         document.location.replace('/forum');
       } else {
@@ -21,4 +27,4 @@ console.log(title)
 
 }
 
-document.getElementById('forumPost').addEventListener('submit', newPostHandler)
+document.getElementById('forumPost').addEventListener('submit', newPostHandler);

@@ -1,5 +1,3 @@
-console.log("I AM SIGN IN");
-
 const signinForm = document.querySelector('#signinForm');
 
 const signinHandler = async function(event) {
