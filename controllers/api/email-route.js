@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const withAuth = require('../../utils/auth');
 const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 
 // The `/api/email` endpoint
@@ -13,8 +14,8 @@ router.post('/', withAuth, async(req, res) => {
         host: 'smtp.ethereal.email',
         port: 587,
         auth: {
-            user: 'np4opop5bhizsznv@ethereal.email',
-            pass: 'CM1hW4UTmDendAC39b'
+            user: process.env.EM_USER,
+            pass: process.env.EM_PASS
         }
     });  
     // send mail with defined transport object
