@@ -1,5 +1,3 @@
-console.log("I AM SIGN UP");
-
 const signupForm = document.querySelector('#signupForm');
 
 const signupHandler = async function(event) {
