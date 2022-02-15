@@ -2,17 +2,9 @@
 <p class="center">Discuss a wide range of topics with your fellow parents. Please remember to respect and love one another. </p>
 <p class="center"><i class="fas fa-baby fa-spin" style="font-size:30px"></i></p>
 
-<form class="mb-4" id="forumPost">
-    <label for="postTitle">Title:</label>
-    <input type="text" name="postTitle" id="postTitle" />
-
-    <label for="postContent">Content:</label>
-    <textarea name="postContent" id="postContent" ></textarea>
-
-    <button class="btn btn-primary mb-2" type="submit">Add Post</button>
-</form>
 
 {{#each threads}}
+<div class="d-flex posts">
 <div class="card mb-4 w-75">
   <div class="card-header bg-info text-white">
     <h1>{{title}}</h1>
@@ -29,8 +21,20 @@
     <a href="#" class="btn btn-success">Add Comment</a>
   </div>
 </div>
+</div>
 {{/each}}
 
+<form class="mb-4 d-flex m-5" id="forumPost">
+  <div class="card p-3 w-100">
+    <label for="postTitle">Title:</label>
+    <input class="form-control" type="text" name="postTitle" id="postTitle" />
+  <br>
+    <label for="postContent">Content:</label>
+    <textarea class="form-control" name="postContent" id="postContent" ></textarea>
+  <br>
+    <button class="btn btn-primary mb-2" type="submit">Add Post</button>
+  </div>
+</form>
 
 
 <script src="/js/forum.js"></script>
