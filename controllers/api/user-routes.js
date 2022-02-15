@@ -78,7 +78,7 @@ router.post('/sign-out', (req, res) => {
 
 
 // PUT route to remove user from Family Group
-router.put('/removeuser', withAuth, async(req, res) => {
+router.put('/removeuser/:id', withAuth, async(req, res) => {
     try {
         const updatedUser = await User.update({ FamilyId:null },{
             where: {
