@@ -34,6 +34,8 @@ I WANT TO create a new thread with a title and content information of that topic
 ![signin](./public/assets/signin.png)
 ![signup](./public/assets/signup.png)
 
+[Demo Video](./public/assets/demo.mp4)
+
 <a name="Installation"></a>
 ## Installation
 
