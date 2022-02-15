@@ -27,11 +27,13 @@
                         <h3>My Family Members:</h3>
                     </div>
                     {{#each myFamily}}
+                    {{#if FamilyId}}
                     <div class="card-body d-flex justify-content-between">
                         <h5>{{username}}</h5>
-                        
-                        <button type="button" id="removeFamilyBtn" class="btn btn-outline-danger btn-sm">Remove Family Member</button>
+                        <div hidden id="family-id">{{id}}</div>
+                        <button type="button" id="removeFamilyBtn" class="btn btn-outline-danger btn-sm" value ={{id}}>Remove Family Member</button>
                     </div>
+                    {{/if}}
                     {{/each}}
                 </div>
             </div>
