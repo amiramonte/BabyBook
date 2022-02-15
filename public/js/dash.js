@@ -5,7 +5,7 @@ const first = []
 const last = []
 
 const modal = document.getElementById('aptModal')
-const close = document.getElementsByClassName('close')[0]
+const close = document.getElementsByClassName('exit')[0]
 
 $('#regBaby').on('click', function(event) {
     event.preventDefault()
@@ -71,6 +71,7 @@ close.addEventListener('click', function() {
 })
 
 window.onclick = function(event) {
+    console.log('close')
     if (event.target == modal) {
         modal.style.display = 'none'
     }
