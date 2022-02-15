@@ -2,7 +2,7 @@
 
 ## Description 
 
-Having a baby? Already have a baby or kids? We we created an app for new/current parents to be able to become a community and talk amongst one another in threads with topics that other parents have created. When you are signed up you can comment and create your own topics and view your dashboard with family information. 
+Having a baby? Already have a baby or kids? We created an app for new/current parents to be able to become a community and talk amongst one another in threads with topics that other parents have created. When you are signed up you can comment and create your own topics and view your dashboard with family information. The user can add their babies to the dash board and schedule appoints such as doctor appointments, play dates, and extracurricular activities for their child.
 
 Link to heroku web page ()
 Link to deployed app on Github ()
