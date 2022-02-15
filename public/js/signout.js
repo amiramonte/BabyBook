@@ -1,5 +1,3 @@
-console.log('TESTING CONNECTION');
-
 const signoutButton = document.querySelector('#signoutButton');
 
 const signOut = async function() {

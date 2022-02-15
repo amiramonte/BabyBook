@@ -11,11 +11,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
         const myFamily = familyData.map((family) => family.get({plain:true}));
 
-        console.log('===========================');
-        console.log(myFamily);
-        console.log('===========================');
-
-
         res.render('dash', {myFamily});
 
     } catch (error) {
@@ -40,10 +35,6 @@ router.get('/forum', async (req, res) => {
         });
 
         const threads = threadData.map((thread) => thread.get({plain:true}));
-
-        console.log('==================');
-        console.log(threads);
-        console.log('==================');
     
         res.render('forum', {threads})
     
