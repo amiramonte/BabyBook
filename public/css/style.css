@@ -82,3 +82,7 @@ input {
 .posts {
     justify-content: center;
 }
+#forumPost {
+    position: sticky;
+    bottom: 1rem;
+}
