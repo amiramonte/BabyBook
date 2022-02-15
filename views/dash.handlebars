@@ -1,0 +1,113 @@
+<div>
+    <h1 class="center">Welcome to your Dashboard!</h1>
+    <br>
+    <div class="container center">
+        <div class="row">
+            <section class="col" id="baby-head">
+                <div class="card">
+                    <div class="card-header">
+                    <h3>My Family</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="babyForm">
+                        <input id="firstName" class="input-group form-control" placeholder="First Name">
+                        <input id="lastName" class="input-group form-control" placeholder="Last Name">
+                        <button id="regBaby" class="forum-btn btn alt-btn">Register Child</button> 
+                        <p id="alert"></p>
+                        </form>
+
+                            <table class="table">
+                                <p class="family-names"></p>
+                                <thread>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thread>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" id="first"></th>
+                                        <th scope="row" id="last"></th>
+                                    </tr> 
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
+            </section>
+
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>My Family Members</h3>
+                    </div>
+                    {{#each myFamily}}
+                    {{#if FamilyId}}
+                    <div class="card-body d-flex justify-content-between">
+                        <h5>{{username}}</h5>
+                        <div hidden id="family-id">{{id}}</div>
+                        <button type="button" id="removeFamilyBtn" class="remove btn btn-outline-danger btn-sm" value ={{id}}>Remove Family Member</button>
+                    </div>
+                    {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+
+            <aside class="col" id="weather-head">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Upcoming Appointments</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="weather-body">
+                            <div class="appt">
+                                <section class="center" id="schedule">
+                                    <table class="table">
+                                        <p class="appointments"></p>
+                                        <thread>
+                                            <tr>
+                                                <th scope="col"></th>
+                                                <th scope="col"></th>
+                                                <th scope="col"></th>
+                                            </tr>
+                                        </thread>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row" id="who"></th>
+                                                <th scope="row" id="what"></th>
+                                                <th scope="row" id="when"></th>
+                                            </tr> 
+                                        </tbody>
+                                    </table>
+
+                                    <button id="regApt" class="forum-btn btn alt-btn" data-toggle="modal" data-target="#exampleModalCenter">Add Appointment</button>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <div id="aptModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3>New Appointment</h3>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected id="options" value="select">Choose a family member</option> 
+                    </select>
+                    <div class="input-group" data-provide="datepicker">
+                        <input id="aptName" placeholder="Appointment Name" class="form-control">
+                        <input id="aptTime" type="datetime-local" id="date" type="text" class="form-control">
+                    </div>
+                    <button class="btn alt-btn" id="submitApt">Submit</button>
+                </div> 
+            </div> 
+
+        </div>
+    </div>    
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script src="/js/dash.js"></script>
+    <script src="/js/familyondash.js"></script>
+</div>

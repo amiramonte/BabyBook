@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS babybook_db;
+CREATE DATABASE babybook_db;

@@ -1,0 +1,82 @@
+body{
+    background-image: linear-gradient(to right, #BBE7FE, #FFD4DB,#F9EAC2,#ECFDF1, #FFD898, #B5EECB);
+}
+
+.btn {
+    min-width: 250px;
+}
+
+.forum-btn {
+    margin-top: 10px;
+}
+
+.remove {
+    max-height: 35px;
+}
+
+#loginbtn, #signupbtn, .alt-btn {
+    background: -webkit-linear-gradient(right, #BBE7FE, #FFD4DB,#F9EAC2);
+}
+
+.center {
+    text-align: center;
+}
+
+#weatherandbabies {
+    display: block;
+    margin: 10px;
+}
+
+#baby-head {
+    float: left;
+}
+
+#weather-head {
+    float: right;
+}
+
+.family-member {
+    list-style-type: none;
+    font-weight: 450;
+    color: rgb(131, 131, 131);
+}
+
+h3 {
+    padding: 10px;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+input {
+    margin: 5px;
+}
+
+.modal {
+    padding: 15vw;
+}
+
+.modal-content {
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.close {
+    width: 30px;
+    color: rgb(255, 0, 0);
+    float: left;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(255, 126, 126);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.posts {
+    justify-content: center;
+}
