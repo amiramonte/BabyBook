@@ -11,7 +11,7 @@ router.post('/', withAuth,  async(req,res) => {
     try {
         const newThread = await Thread.create({
          ...req.body,
-            userId:req.session.userId 
+            UserId:req.session.userId 
         })
 
         return res.status(200).json(newThread);

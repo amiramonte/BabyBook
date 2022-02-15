@@ -31,7 +31,10 @@ router.get('/forum', async (req, res) => {
 
     try {
         const threadData = await Thread.findAll({
-            include: [User, Comment]
+            include: [User, {
+                model: Comment,
+                include: [User]
+            }]
         });
 
         const threads = threadData.map((thread) => thread.get({plain:true}));
