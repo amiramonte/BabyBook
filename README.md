@@ -2,10 +2,10 @@
 
 ## Description 
 
-Having a baby? Already have a baby or kids? We we created an app for new/current parents to be able to become a community and talk amongst one another in threads with topics that other parents have created. When you are signed up you can comment and create your own topics and view your dashboard with family information. 
+Having a baby? Already have a baby or kids? We have created an app for new/current parents to be able to become part of a community and talk amongst one another in threads with topics that other parents have created. When you are signed up you can comment and create your own topics and view your dashboard with family information. You can add your baby(s) to the dash board and schedule events such as doctor appointments, play dates, and extracurricular activities for your child. Notify all your family members of an event, like spending the day at the park, via a single email button. 
 
-Link to heroku web page ()
-Link to deployed app on Github ()
+Link to heroku web page [Babybook on Heroku](https://babybook7.herokuapp.com/)
+Link to deployed app on Github [Babybook on Github](https://github.com/kearac-hub/Baby-Forum-Project-2)
 
 # Table of Contents 
 - [User Story](#UserStory)
