@@ -88,21 +88,31 @@
                 </div>
             </aside>
 
-            <div id="aptModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h3>New Appointment</h3>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected id="options" value="select">Choose a family member</option> 
-                    </select>
-                    <div class="input-group" data-provide="datepicker">
-                        <input id="aptName" placeholder="Appointment Name" class="form-control">
-                        <input id="aptTime" type="datetime-local" id="date" type="text" class="form-control">
+            <div id="emailSent" class="modal">
+                <div class="modal-dialog-center modal-dialog">
+                    <div class="modal-content">
+                        <span class="x close">&times;</span>
+                        <p id="status">text here</p>
                     </div>
-                    <button class="btn alt-btn" id="submitApt">Submit</button>
                 </div> 
-            </div> 
+            </div>
 
+            <div id="aptModal" class="modal">
+                <div class="modal-dialog-center modal-dialog">
+                    <div class="modal-content">
+                        <span class="exit close">&times;</span>
+                        <h3>New Appointment</h3>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected id="options" value="select">Choose a family member</option> 
+                        </select>
+                        <div class="input-group" data-provide="datepicker">
+                            <input id="aptName" placeholder="Appointment Name" class="form-control">
+                            <input id="aptTime" type="datetime-local" id="date" type="text" class="form-control">
+                        </div>
+                        <button class="btn alt-btn" id="submitApt">Submit</button>
+                    </div> 
+                </div>
+            </div>
         </div>
     </div>    
     <script

@@ -1,5 +1,8 @@
 const emailFamilyBtn = document.querySelector('#emailFamily');
 
+const stat = document.getElementById('emailSent')
+let msg = document.getElementById('status')
+const x = document.getElementsByClassName('x')[0]
 
 const sendEmail = async function (event) {
     event.preventDefault()
@@ -13,17 +16,30 @@ const sendEmail = async function (event) {
           });
         
           console.log(response);
+          msg.innerText = ''
 
           if (response.ok) {
-              alert('Your Email was sent!')
+              stat.style.display = 'block'
+              msg.innerHTML = 'Your email was sent successfully!'
           } else {
-                alert('Something went wrong!');
+              stat.style.display = 'block'
+              msg.innerText = 'There was a problem sending your email.'
           }
         
     } catch (error) {
         console.log(error);
     }
-  }
-  
+}
+
+x.addEventListener('click', function() {
+
+    stat.style.display = 'none'
+})
+
+window.onclick = function(event) {
+    if (event.target == stat) {
+        stat.style.display = 'none'
+    }
+}
 
 emailFamilyBtn.addEventListener('click', sendEmail);
