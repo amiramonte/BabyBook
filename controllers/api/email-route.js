@@ -9,6 +9,16 @@ require('dotenv').config();
 router.post('/', withAuth, async(req, res) => {
     try {
   
+        const output = `    
+        
+        <h1>Hello Family!</h1>
+
+        <h3>WooHoo!</h3>
+            
+           <h5>A new playdate has been planned! Log on to BabyBook to see when and where. Get your kids together and enjoy some family time!</h5>
+
+        <h5>Sent with &#128150 by BabyBook</h5>`
+
     // create reusable transporter object using the default SMTP transport
     const transporter = nodemailer.createTransport({
         host: 'smtp.ethereal.email',
@@ -23,7 +33,8 @@ router.post('/', withAuth, async(req, res) => {
       from: '"BabyBook" <BabyBookAdmin@BabyBook.com>', // sender address
       to: "alex.r.miramontes@gmail.com, kearacotter@hotmail.com, lzuniga1315@gmail.com, ben.r.dominguez@gmail.com ", // list of receivers
       subject: "New Playdate Planned", // Subject line
-      text: "There is a new playdate planned! Log in to BabyBook to see when it is!", // plain text body
+      text: "Hello Family! WooHoo! A new playdate has been planned! Log on to BabyBook to see when and where. Get your kids together and enjoy some family time! Sent with love, by BabyBook",
+      html: output // plain text body
     });
   
     console.log("Message sent: %s", info.messageId);
