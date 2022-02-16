@@ -5,6 +5,7 @@ const router = require('express').Router();
 
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
+
         const familyData = await User.findAll({
             include: [Family]
         })
@@ -31,11 +32,15 @@ router.get('/forum', async (req, res) => {
 
     try {
         const threadData = await Thread.findAll({
-            include: [User, Comment]
+            include: [User, {
+                model: Comment,
+                include: [User]
+            }]
         });
 
         const threads = threadData.map((thread) => thread.get({plain:true}));
     
+
         res.render('forum', {threads})
     
     } catch (error) {

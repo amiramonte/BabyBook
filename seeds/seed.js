@@ -66,18 +66,18 @@ const threads = [
 const comments = [
     {
         body: "I recommend this and that for teething!",
-        UserId: 1,
+        UserId: 4,
         ThreadId: 1
     },
     {
         body: "OshKosh are the best baby clothes!",
-        UserId: 1,
+        UserId: 3,
         ThreadId: 2
 
     },
     {
         body: "Huggies are the only way to go for diapers!",
-        UserId: 1,
+        UserId: 2,
         ThreadId: 3
 
     },

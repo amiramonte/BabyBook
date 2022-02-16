@@ -14,11 +14,10 @@
   </div>
   <div class="card-body">
     <h3 class="card-title">{{content}}</h3>
-    <h5>{{User.username}} says:</h5>
     {{#each Comments}}
+    <h5>{{User.username}} says:</h5>
     <p class="card-text">{{body}}</p>
     {{/each}}
-    <a href="#" class="btn btn-success">Add Comment</a>
   </div>
 </div>
 </div>
