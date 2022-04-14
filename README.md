@@ -15,18 +15,21 @@
 
 ## Description 
 
-Having a baby? Already have a baby or kids? We have created an app for new/current parents to be able to become part of a community and talk amongst one another in threads with topics that other parents have created. When you are signed up you can comment and create your own topics and view your dashboard with family information. You can add your baby(s) to the dash board and schedule events such as doctor appointments, play dates, and extracurricular activities for your child. Notify all your family members of an event, like spending the day at the park, via a single email button. 
+Having a baby? Already have a baby or kids? BabyBook is an app for new and current parents to be able to become part of a community and talk amongst one another. BabyBook has threads with topics that other parents have created. When you are signed up you can comment and create your own topics and view your dashboard with family information. You can add your baby(s) to the dash board and schedule events such as doctor appointments, play dates, and extracurricular activities for your child. Notify all your family members of an event, like spending the day at the park, via a single email button. 
 
-Link to heroku web page [Babybook on Heroku](https://babybook7.herokuapp.com/)
-Link to deployed app on Github [Babybook on Github](https://github.com/kearac-hub/Baby-Forum-Project-2)
+---
 
- 
-specific thread.
+## Functionality
 
 ![signin](./public/assets/signin.png)
 ![signup](./public/assets/signup.png)
 
-[Demo Video](./public/assets/demo.mp4)
+---
+
+## Deployed Application
+
+[Babybook deployed on Heroku](https://babybook7.herokuapp.com/)
+
 
 <a name="Installation"></a>
 ## Installation
