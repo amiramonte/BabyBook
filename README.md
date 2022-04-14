@@ -30,6 +30,18 @@ Having a baby? Already have a baby or kids? BabyBook is an app for new and curre
 
 [Babybook deployed on Heroku](https://babybook7.herokuapp.com/)
 
+---
+
+## Technologies 
+
+Project is created with:
+
+- [JavaScript](https://www.javascript.com/)
+- [Node.js](https://nodejs.org/)
+- [Express.js](https://expressjs.com/)
+- [Webpack](https://webpack.js.org/)
+
+---
 
 <a name="Installation"></a>
 ## Installation
