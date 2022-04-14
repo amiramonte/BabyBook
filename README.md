@@ -37,9 +37,18 @@ Having a baby? Already have a baby or kids? BabyBook is an app for new and curre
 Project is created with:
 
 - [JavaScript](https://www.javascript.com/)
+- [Handlebars.js](https://handlebarsjs.com/)
 - [Node.js](https://nodejs.org/)
 - [Express.js](https://expressjs.com/)
-- [Webpack](https://webpack.js.org/)
+- [Express-Handlebars](https://www.npmjs.com/package/express-handlebars)
+- [Express-Session](https://www.npmjs.com/package/express-session)
+- [Bcrypt.js](https://www.npmjs.com/package/bcrypt)
+- [Dotenv](https://www.npmjs.com/package/dotenv)
+- [MySQL](https://www.mysql.com/)
+- [Node MySQL2](https://www.npmjs.com/package/mysql2)
+- [Sequelize](https://sequelize.org/)
+- [NodeMailer](https://nodemailer.com/about/)
+- [Connect-Session-Sequelize](https://www.npmjs.com/package/connect-session-sequelize)
 
 ---
 
