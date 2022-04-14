@@ -64,7 +64,7 @@ Project is created with:
 ---
 
 
-## Installation (If local functionality desired)
+## Installation
 
 1. Clone the repository from Github 
 2. Open the repository in your preferred source code editor
