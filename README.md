@@ -5,12 +5,13 @@
 
 
 ## Table of Contents 
+
 - [Description](#description)
 - [Functionality](#functionality)
 - [Deployed Application](#deployedapplication)
 - [Technologies](#technologies)
-- [Installation](#Installation)
-- [Credits](#Credits)
+- [Installation](#installation)
+- [Credits](#credits)
 
 
 ---
@@ -63,7 +64,6 @@ Project is created with:
 ---
 
 
-<a name="Installation"></a>
 ## Installation
 
 1. Clone the Github repo. 
@@ -74,8 +74,12 @@ Project is created with:
 6. `npm run seed`
 7. `npm start` to view in localhost.
 
-<a name="Credits"></a>
-## Credits
+
+---
+
+
+## Credits 
+
 - [lzvalentin](https://github.com/lzvalentin)
 - [amiramonte](https://github.com/amiramonte)
 - [kearac-hub](https://github.com/kearac-hub)
