@@ -8,7 +8,7 @@
 
 - [Description](#description)
 - [Functionality](#functionality)
-- [Deployed Application](#deployedapplication)
+- [Deployed Application](#deployed-application)
 - [Technologies](#technologies)
 - [Installation](#installation)
 - [Credits](#credits)
