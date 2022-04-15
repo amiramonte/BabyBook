@@ -66,7 +66,7 @@ Project is created with:
 
 ## Installation
 
-1. Clone the repository from Github 
+1. Clone the repository from Github down to your local machine
 2. Open the repository in your preferred source code editor
 3. Navigate to your command line interface and enter `npm i` to install all dependencies
 4. Set up a .env file with login credentials for MySQL on your local machine
